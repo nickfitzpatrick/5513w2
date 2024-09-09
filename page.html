@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1>
+    <meta name="viewport" content="width=device-width", initial-scale=1>
     <title>React Import External JSON</title>
     <style>
         ol {
@@ -18,7 +18,7 @@
 <body>
     <h1>Hello World!</h1>
     <div id="myApp"></div>
-    <script type=""text/babel">
+    <script type="text/babel">
         "use strict";
         function ProjectList(properties) {
             console.log(properties);
@@ -26,11 +26,11 @@
                 <div>
                     <ol>
                         {
-                            properties.lsit.map(
+                            properties.list.map(
                                 (item, index) => (
                                     <li key={index}>
                                         <a href ={item.link}>
-                                            {item.firstname}
+                                            {item.firstName}
                                         </a>
                                     </li>
                                 )
@@ -43,7 +43,7 @@
 
         $.getJSON(
             'x',
-            fucntion(jsonFromJquery) {
+            function(jsonFromJquery) {
                 const myRoot = ReactDOM.createRoot(document.getElementById('myApp'));
                 myRoot.render(
                     <ProjectList list={jsonFromJquery} />

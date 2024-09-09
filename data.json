@@ -10,9 +10,5 @@
     {
         "firstName": "Mary",
         "link": "http://www.w3school.edu"
-    },
-    {
-        "firstName": "Fred",
-        "link": "http://www.santarosa.edu"
     }
 ]
