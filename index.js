@@ -19,7 +19,7 @@ const requestListener = function(request, response) {
                 }
             )
     } else {
-        myFileSystem.readFile( __dirname + "/data.json")
+        myFileSystem.readFile( __dirname + "/navigation.json")
             .then(contents => {
                 response.setHeader("Content-Type", "application/json; charset=UTF-8");
                 response.writeHead(200);
