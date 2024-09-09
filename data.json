@@ -1,14 +1,22 @@
 [
     {
-        "firstName": "Fred",
-        "link": "http://www.santarosa.edu"
+        "buttonName": "Home",
+        "link": "http://www.myFirstServer.com/home"
     },
     {
-        "firstName": "Jane",
-        "link": "http://www.apple.edu"
+        "buttonName": "Products",
+        "link": "http://www.myFirstServer.com/products"
     },
     {
-        "firstName": "Mary",
-        "link": "http://www.w3school.edu"
+        "buttonName": "Blog",
+        "link": "http://www.myFirstServer.com/blog"
+    },
+    {
+        "buttonName": "About Us",
+        "link": "http://www.myFirstServer.com/about"
+    },
+    {
+        "buttonName": "Contact",
+        "link": "http://www.myFirstServer.com/contact"
     }
 ]

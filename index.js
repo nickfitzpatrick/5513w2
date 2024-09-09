@@ -4,13 +4,13 @@
 const http = require("http");
 
 // use promieses instead of callbacks
-const fs = require("fs").promises;
+const myFileSystem = require("fs").promises;
 
 const requestListener = function(request, response) {
     console.log(request.url);
     
     if (request.url === "/") {
-        fs.readFile( __dirname + "/page.html")
+        myFileSystem.readFile( __dirname + "/homepage.html")
             .then(
                 contents => {
                     response.setHeader("Content-Type", "text/html");
@@ -19,7 +19,7 @@ const requestListener = function(request, response) {
                 }
             )
     } else {
-        fs.readFile( __dirname + "/data.json")
+        myFileSystem.readFile( __dirname + "/data.json")
             .then(contents => {
                 response.setHeader("Content-Type", "application/json; charset=UTF-8");
                 response.writeHead(200);
@@ -28,16 +28,16 @@ const requestListener = function(request, response) {
     }
 };
 
-const server = http.createServer(requestListener);
+const myFirstServer = http.createServer(requestListener);
 
 // define TCP port and IP address
 const host = "127.0.0.1"; // localhost
 const port = "3000"; // typical for node.js
 
-server.listen(
+myFirstServer.listen(
     port,
     host,
     () => {
-        console.log('Server is running');
+        console.log('Hooray, the server is running!');
     }
 )

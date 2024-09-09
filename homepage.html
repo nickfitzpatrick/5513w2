@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width", initial-scale=1>
+    <title>1st w/ Node.js + React Basics!</title>
+    <style>
+        ol {
+            text-align: center;
+        }
+
+        li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        li:hover {
+        transform: translateY(-8px);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
+</head>
+<body>
+    <h1>My First Time Playing with Node.js + React Basics!</h1>
+    <div id="myFirstReactApp"></div>
+    <script type="text/babel">
+        "use strict";
+        function LinkList(properties) {
+            console.log(properties);
+            return (
+                <div>
+                    <ol>
+                        {
+                            properties.list.map(
+                                (item, index) => (
+                                    <li key={index}>
+                                        <a href ={item.link}>
+                                            <button style={{
+                                            backgroundColor: '#93E9BE',
+                                            border: 'none',
+                                            color: 'white',
+                                            padding: '10px 20px',
+                                            cursor: 'pointer',
+                                            borderRadius: '12px',
+                                            }}> 
+                                                {item.buttonName}
+                                            </button>
+                                        </a>
+                                    </li>
+                                )
+                            )
+                        }
+                    </ol>
+                </div>
+            );
+        }
+
+        $.getJSON(
+            'whatever',
+            function(jsonFromJquery) {
+                const myRoot = ReactDOM.createRoot(document.getElementById('myFirstReactApp'));
+                myRoot.render(
+                    <LinkList list={jsonFromJquery} />
+                );
+            }
+        );
+    </script>
+</body>
+</html>
